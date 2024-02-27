@@ -7,7 +7,7 @@ import { ShoppingCartIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import routes from "@/routes";
 
-export default function RoutingGrid() {
+export default function Navbar() {
   const router = useRouter();
 
   const reRouteUser = (page) => {
