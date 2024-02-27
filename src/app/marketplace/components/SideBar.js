@@ -11,7 +11,6 @@ export default function SideBar() {
   const router = useRouter();
 
   const routeUser = (path) => {
-    console.log(path);
     router.push(path);
   };
 
