@@ -1,4 +1,5 @@
 const routes = {
+  home: "/",
   gaming: "/gaming",
   marketplace: "/marketplace",
 };
