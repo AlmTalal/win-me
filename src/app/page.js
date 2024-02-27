@@ -1,6 +1,5 @@
 "use client";
 import { ThirdwebProvider, metamaskWallet } from "@thirdweb-dev/react";
-import Header from "./components/mainComponents/Header";
 import Main from "./components/mainComponents/Main";
 
 export default function Home() {
