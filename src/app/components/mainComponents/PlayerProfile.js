@@ -7,7 +7,7 @@ export default function PlayerProfile() {
   const address = useAddress();
 
   return (
-    <div className="col-span-2 bg-black  w-full h-full rounded p-5 text-white font-bold text-3xl justify-center items-center">
+    <div className="col-span-2 bg-black  w-full h-full  p-5 text-white font-bold text-3xl justify-center items-center rounded-lg border-2 border-red-700">
       <div className="w-full flex flex-row items-center justify-between">
         {address ? <h1>Player name</h1> : <h1>Guest 011111</h1>}
         <ConnectWallet />
