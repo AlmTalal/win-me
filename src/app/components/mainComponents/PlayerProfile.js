@@ -1,6 +1,7 @@
 import React from "react";
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import Image from "next/image";
+import Separator from "../Separator";
 
 export default function PlayerProfile() {
   const address = useAddress();
@@ -11,7 +12,7 @@ export default function PlayerProfile() {
         {address ? <h1>Player name</h1> : <h1>Guest 011111</h1>}
         <ConnectWallet />
       </div>
-      <div className="h-[0.5px] bg-white w-full my-3" />
+      <Separator />
       <div className="flex h-[90%] justify-center items-center">
         {address ? (
           <Image
