@@ -1,9 +1,9 @@
 const routes = {
-  home: "/",
-  gaming: "/gaming",
-  marketplace: "/marketplace",
-  playerNfts: `/marketplace/ownedNfts`,
-  tryTrackOne: "/gaming/tryTrackOne",
+  home: "/home",
+  gaming: "/home/gaming",
+  marketplace: "/home/marketplace",
+  playerNfts: "/home/marketplace/ownedNfts",
+  tryTrackOne: "/home/gaming/tryTrackOne",
 };
 
 export default routes;
