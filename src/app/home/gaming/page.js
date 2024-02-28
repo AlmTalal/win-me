@@ -10,7 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
 
   const routeUser = (path) => {
