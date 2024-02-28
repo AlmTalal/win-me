@@ -36,6 +36,7 @@ export default function PlayerProfile() {
             width={100}
             height={100}
             className="h-[40%] w-[90%] rounded-lg"
+            alt="Your Nft Image"
           />
         ) : (
           <h3 className="text-center text-base">

@@ -53,14 +53,14 @@ export default function Navbar() {
         onClick={() => reRouteToGamingPage(routes.gaming)}
       >
         <PlayIcon />
-        <p className="ml-2">Let's play!</p>
+        <p className="ml-2">{"Let's play!"}</p>
       </Button>
       <Button
         className="my-10 p-5 w-40"
         onClick={() => reRouteUser(routes.marketplace)}
       >
         <ShoppingCartIcon />
-        <p className="ml-2">Let's shop!</p>
+        <p className="ml-2">{"Let's shop!"}</p>
       </Button>
       <AlertDialog open={showDialog} onOpenChange={setShowDialog}>
         <AlertDialogContent className="text-white bg-black border-red-600">

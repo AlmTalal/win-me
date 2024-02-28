@@ -29,8 +29,8 @@ export default function PlayerStatistics() {
           <Table>
             <TableCaption>You are killing it!</TableCaption>
             <TableBody>
-              {statistics.map((statistic) => (
-                <TableRow>
+              {statistics.map((statistic, index) => (
+                <TableRow key={index}>
                   <TableCell className="font-medium">{statistic[0]}</TableCell>
                   <TableCell>{statistic[1]}</TableCell>
                 </TableRow>
