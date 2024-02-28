@@ -15,8 +15,6 @@
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.7",
-    "@thirdweb-dev/react": "^4.4.9",
-    "@thirdweb-dev/sdk": "^4.0.36",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "dotenv": "^16.4.5",
