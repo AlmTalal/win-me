@@ -6,7 +6,6 @@ import { PlayIcon } from "@radix-ui/react-icons";
 import { ShoppingCartIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import routes from "@/routes";
-import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -16,15 +15,10 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { useSDK } from "@metamask/sdk-react";
 
 export default function Navbar() {
-  const address = useAddress();
-
-  useEffect(() => {
-    if (address !== undefined) {
-      setShowDialog(false);
-    }
-  }, [address]);
+  const { sdk, connected } = useSDK();
 
   const router = useRouter();
   const [showDialog, setShowDialog] = useState(false);
@@ -34,12 +28,22 @@ export default function Navbar() {
   };
 
   const reRouteToGamingPage = (page) => {
-    if (address !== undefined) {
+    if (connected) {
       router.push(page);
       return;
     }
-
     setShowDialog(!showDialog);
+  };
+
+  const connect = async () => {
+    try {
+      const accounts = await sdk?.connect();
+      if (accounts.length) {
+        reRouteToGamingPage(routes.gaming);
+      }
+    } catch (err) {
+      console.warn(`failed to connect..`, err);
+    }
   };
 
   return (
@@ -72,7 +76,12 @@ export default function Navbar() {
             <AlertDialogCancel className="p-4 px-7 w-auto h-auto text-black font-semibold font-xl">
               Cancel
             </AlertDialogCancel>
-            <ConnectWallet />
+            <Button
+              className="p-4 py-7 bg-white text-black font-semibold hover:bg-slate-300"
+              onClick={() => connect()}
+            >
+              Connect Wallet
+            </Button>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
