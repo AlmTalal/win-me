@@ -15,7 +15,6 @@ export default function SideBar() {
   };
 
   const path = usePathname();
-  console.log(path);
 
   return (
     <div className="col-span-1 flex h-[85vh] rounded-lg border-2 border-red-700 p-5  overflow-scroll flex-col ">

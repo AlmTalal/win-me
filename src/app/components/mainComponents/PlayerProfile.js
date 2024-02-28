@@ -1,20 +1,36 @@
-import React from "react";
-import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Separator from "../Separator";
+import { useSDK } from "@metamask/sdk-react";
+import { Button } from "@/components/ui/button";
 
 export default function PlayerProfile() {
-  const address = useAddress();
+  const { sdk, connected } = useSDK();
+
+  useEffect(() => {}, [connected]);
+
+  const connect = async () => {
+    try {
+      await sdk?.connect();
+    } catch (err) {
+      console.warn(`failed to connect..`, err);
+    }
+  };
 
   return (
     <div className="col-span-2 bg-black  w-full h-full  p-5 text-white font-bold text-3xl justify-center items-center rounded-lg border-2 border-red-700">
       <div className="w-full flex flex-row items-center justify-between">
-        {address ? <h1>Player name</h1> : <h1>Guest 011111</h1>}
-        <ConnectWallet />
+        {connected ? <h1>Player name</h1> : <h1>Guest 011111</h1>}
+        <Button
+          className="p-6 bg-white text-black font-semibold hover:bg-slate-300"
+          onClick={() => connect()}
+        >
+          {connected ? "Connected" : "Connect Wallet"}
+        </Button>
       </div>
       <Separator />
       <div className="flex h-[90%] justify-center items-center">
-        {address ? (
+        {connected ? (
           <Image
             src="https://imgs.search.brave.com/IGplFNYMDfC98oN9wbnKp1SX7njBQc8p-yJt222A-jU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9taW5p/bWFsaXN0aWMtY2Fy/dG9vbi1za2V0Y2gt/Z28ta2FydC1yb3Vn/aC1yb2FkLXBlbmNp/bC1kcmF3aW5nLXF1/YWQtcmFjZXItc2l0/dGluZy1kaXJ0LXNp/bXBsaXN0aWMtc3R5/bGUtYXJ0d29yay0y/OTI1MjAyMzIuanBn"
             width={100}

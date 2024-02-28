@@ -1,4 +1,3 @@
-import { useAddress } from "@thirdweb-dev/react";
 import React from "react";
 import Separator from "../Separator";
 import {
@@ -6,13 +5,12 @@ import {
   TableBody,
   TableCaption,
   TableCell,
-  TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useSDK } from "@metamask/sdk-react";
 
 export default function PlayerStatistics() {
-  const address = useAddress();
+  const { connected } = useSDK();
 
   const statistics = [
     ["Games Won", 90],
@@ -22,7 +20,7 @@ export default function PlayerStatistics() {
 
   return (
     <div className="col-span-2 bg-black w-full h-full rounded p-5 text-white font-bold text-3xl ">
-      {address ? (
+      {connected ? (
         <>
           <div className="h-16 flex w-full justify-start items-center ">
             <h1>Player Statistics</h1>
