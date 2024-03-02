@@ -13,7 +13,7 @@ export default function Layout({ children }) {
         debug={false}
         sdkOptions={{
           dappMetadata: {
-            name: "Example React Dapp",
+            name: "Win me Game",
             url: path,
           },
         }}
