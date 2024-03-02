@@ -5,7 +5,7 @@ import { useSDK } from "@metamask/sdk-react";
 import { ethers } from "ethers";
 import React, { useEffect } from "react";
 
-export default function page() {
+export default function Page() {
   const providers = new ethers.providers.JsonRpcProvider(
     `${nets.sepolia}${process.env.NEXT_PUBLIC_INFURA_API_KEY}`
   );
