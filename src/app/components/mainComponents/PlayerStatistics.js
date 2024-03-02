@@ -14,7 +14,7 @@ export default function PlayerStatistics() {
 
   const statistics = [
     ["Games Won", 90],
-    ["Nfts Owned", 2],
+    ["NFTs Owned", 2],
     ["Total tokens Won", 1000],
   ];
 
