@@ -1,13 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Separator from "../Separator";
 import { useSDK } from "@metamask/sdk-react";
 import { Button } from "@/components/ui/button";
 
 export default function PlayerProfile() {
-  const { sdk, connected } = useSDK();
+  const { sdk, connected, account } = useSDK();
+  const [address, setAddress] = useState();
 
-  useEffect(() => {}, [connected]);
+  useEffect(() => {
+    if (connected) {
+      setAddress(
+        `${account.substring(0, 3)}...${account.substring(account.length - 3)}`
+      );
+    }
+  }, [connected]);
 
   const connect = async () => {
     try {
@@ -25,7 +32,7 @@ export default function PlayerProfile() {
           className="p-6 bg-white text-black font-semibold hover:bg-slate-300"
           onClick={() => connect()}
         >
-          {connected ? "Connected" : "Connect Wallet"}
+          {connected ? `${address}` : "Connect Wallet"}
         </Button>
       </div>
       <Separator />
