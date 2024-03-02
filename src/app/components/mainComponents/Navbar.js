@@ -20,6 +20,8 @@ import { useSDK } from "@metamask/sdk-react";
 export default function Navbar() {
   const { sdk, connected } = useSDK();
 
+  useEffect(() => {}, [connected]);
+
   const router = useRouter();
   const [showDialog, setShowDialog] = useState(false);
 
@@ -49,7 +51,9 @@ export default function Navbar() {
   return (
     <div className=" flex flex-1 flex-col justify-evenly items-center w-full h-full rounded-lg border-2 border-red-700">
       <Button
-        className="my-10 p-5 w-40"
+        className={`my-10 p-5 w-40 ${
+          connected ? "bg-white text-black hover:bg-slate-300" : ""
+        }`}
         onClick={() => reRouteToGamingPage(routes.gaming)}
       >
         <PlayIcon />

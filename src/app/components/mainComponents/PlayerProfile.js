@@ -29,7 +29,9 @@ export default function PlayerProfile() {
       <div className="w-full flex flex-row items-center justify-between">
         {connected ? <h1>Player name</h1> : <h1>Guest 011111</h1>}
         <Button
-          className="p-6 bg-white text-black font-semibold hover:bg-slate-300"
+          className={`p-6  text-black font-semibold hover:bg-slate-300 ${
+            connected ? "bg-zinc-800 text-white hover:bg-zinc-800 " : "bg-white"
+          } `}
           onClick={() => connect()}
         >
           {connected ? `${address}` : "Connect Wallet"}
