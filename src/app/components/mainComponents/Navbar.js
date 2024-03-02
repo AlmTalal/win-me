@@ -73,7 +73,7 @@ export default function Navbar() {
               Hey, we need you to connect your Metamask
             </AlertDialogTitle>
             <AlertDialogDescription>
-              Don't worry, we are not scamming you 🤭
+              {"Don't worry, we are not scamming you 🤭"}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
