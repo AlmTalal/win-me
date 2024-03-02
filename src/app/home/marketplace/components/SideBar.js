@@ -65,7 +65,7 @@ export default function SideBar() {
         <AlertDialogContent className="text-white bg-black border-red-600">
           <AlertDialogHeader>
             <AlertDialogTitle className="flex justify-between items-center ">
-              Let's buy some Win-Me Tokens
+              {"Let's buy some Win-Me Tokens"}
               <AlertDialogCancel className="h-auto w-auto bg-black border-black hover:bg-black hover:text-white">
                 <XIcon />
               </AlertDialogCancel>
