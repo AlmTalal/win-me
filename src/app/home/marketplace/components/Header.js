@@ -1,21 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import routes from "@/routes";
-import { useSDK } from "@metamask/sdk-react";
 import { StepBack } from "lucide-react";
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function Header() {
   const router = useRouter();
-  const { connected } = useSDK();
-
-  useEffect(() => {
-    if (!connected) {
-      reRouteUser(router.push(routes.home));
-    }
-  }, [connected]);
 
   const reRouteUser = (page) => {
     router.push(page);
