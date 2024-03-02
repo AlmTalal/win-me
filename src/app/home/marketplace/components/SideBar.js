@@ -53,13 +53,13 @@ export default function SideBar() {
         onClick={() => routeUser(routes.playerNfts)}
       >
         <BadgeCheckIcon className="mr-2 h-4 w-4" />
-        Your Nfts
+        Your NFTs
       </Button>
       <Button
         className={"hover:bg-white hover:text-black px-7 py-5 my-4 text-white "}
         onClick={() => setShowDialog(true)}
       >
-        Buy Win-Me Tokens
+        <p>Buy Win-Me Tokens</p>
       </Button>
       <AlertDialog open={showDialog} onOpenChange={setShowDialog}>
         <AlertDialogContent className="text-white bg-black border-red-600">
